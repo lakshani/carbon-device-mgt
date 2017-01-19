@@ -65,7 +65,7 @@ public class ApplicationManagementAdminServiceImpl implements ApplicationManagem
 
             if (applicationWrapper.getDeviceIdentifiers() != null) {
                 for (DeviceIdentifier deviceIdentifier : applicationWrapper.getDeviceIdentifiers()) {
-                    if (Platform.ANDROID.toString().equals(deviceIdentifier.getType())) {
+                    if (Platform.ANDROID.toString().equals(deviceIdentifier.getType().toUpperCase())) {
                         operation = MDMAndroidOperationUtil.createInstallAppOperation(mobileApp);
                     } else if (Platform.IOS.toString().equals(deviceIdentifier.getType())) {
                         operation = MDMIOSOperationUtil.createInstallAppOperation(mobileApp);
